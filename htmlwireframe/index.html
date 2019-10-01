@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Eczar&display=swap" rel="stylesheet">
+
+    <title>My Bookmarks</title>
+
+    <link rel="stylesheet" href="https://cdnj.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>My Bookmarks</h1>
+    <nav>
+    <button type="submit" id="display-form" class="new-bookmark">New Bookmark</button>
+    <!-- <label for="rating-filter">Minimum Rating: </label> -->
+
+    <select name="" id="rating-filter">
+        <option value selected>Minimum Rating:</option>
+        <option value="5">⭑⭑⭑⭑⭑</option>
+        <option value="4">⭑⭑⭑⭑⭒</option>
+        <option value="3">⭑⭑⭑⭒⭒</option>
+        <option value="2">⭑⭑⭒⭒⭒</option>
+        <option value="1">⭑⭒⭒⭒⭒</option>
+    </select>
+    </nav>
+
+    <section>
+    <ul class="js-bookmark-list">
+        <li data-bookmark-id="#" class="bookmark">
+            <button id="delete" class="delete"><img src="trash.png"></button>
+        <div data-bookmark-id="#" class="bookmark-collapse"></div>
+        <h3>My First Bookmark</h3>
+        <p>⭑⭑⭑⭑⭑</p>
+        </div>
+        </li>
+
+        <li data-bookmark-id="#" class="bookmark">
+        <button id="delete" class="delete"><img src="trash.png"></button>
+        <div data-bookmark-id="#" class="bookmark-collapse"></div>
+        <h3>My First Bookmark</h3>
+        <p>⭑⭑⭑⭑⭑</p>
+        </div>
+        </li>
+
+        <li data-bookmark-id="#" class="bookmark">
+        <button id="delete" class="delete"><img src="trash.png"></button>
+        <div data-bookmark-id="#" class="bookmark-collapse"></div>
+        <h3>My First Bookmark</h3>
+        <p>⭑⭑⭑⭑⭑</p>
+        </div>
+        </li>
+
+        </ul>
+
+    </section>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
