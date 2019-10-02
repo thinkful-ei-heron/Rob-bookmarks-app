@@ -68,7 +68,7 @@ const form = function(){
             .catch(error => console.log(error));
         })
         .then(resJSON => {
-          console.log(resJSON);
+
           store.adding = false;
           render();
         })
