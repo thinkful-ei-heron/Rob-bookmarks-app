@@ -86,7 +86,6 @@ li {
 
 li button {
     border: none;
-    background-color: inherit;
     float: right;
     cursor: pointer;
 }
