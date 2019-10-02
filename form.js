@@ -1,17 +1,13 @@
 'use strict';
 
-const bookmarkForm = function(){
+const form = function(){
   
   const render = function(){
-      // <label for="title">Title</label>
-      // <label for="url">Bookmark URL</label>
-      // <label for="desc">Description</label>
-      // <label for="rating">My Rating</label>
     const form = `
       <form id="bookmark-form" class="bookmark-form">
         <input type="text" name="title" id="title" placeholder="Site Title" required />
         <input type="url" name="url" id="url" placeholder="Site URL" required />
-        <input type="text" name="desc" id="desc" maxlength="255" placeholder="Enter a short description of the bookmark"/>
+        <input type="text" name="desc" id="desc" maxlength="160" placeholder="Enter a short description of the bookmark"/>
         
         <select name="rating" id="rating" min="1" max="5">
           <option value="5">⭑⭑⭑⭑⭑</option>
@@ -59,7 +55,7 @@ const bookmarkForm = function(){
       api.createBookmark(formObject)
         .then(res => res.json())
         .then(resJSON => {
-          api.getBookmarks()
+          api.fetchBookmarks()
             .then(res => res.json())
             .then(bookmarks => {
               store.bookmarks = [];

@@ -8,7 +8,7 @@ const api = (function() {
         {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
             },
             body: JSON.stringify(bookmark)
         })
@@ -16,17 +16,19 @@ const api = (function() {
             if(res.ok){
                 return res;
             }
-            throw new Error("There's an error here", res);
+             throw new Error("There's an error here", res);
+            
         });
     }
 
-    const getBookmarks = function() {
+    const fetchBookmarks = function() {
         return fetch(`${BASE_URL}/bookmarks`)
         .then(res => {
             if(res.ok) {
                 return res;
-            } 
+            }
             throw new Error("There's an error here", res);
+            
         });
     };
 
@@ -65,7 +67,7 @@ const api = (function() {
 
     return {
         createBookmark,
-        getBookmarks,
+        fetchBookmarks,
         updateBookmark,
         deleteBookmark
     };

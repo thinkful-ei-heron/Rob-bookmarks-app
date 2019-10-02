@@ -1,7 +1,7 @@
 'use strict';
 
 $('document').ready(function(){
-    api.getBookmarks()
+    api.fetchBookmarks()
       .then(res => res.json())
       .then(bookmarks => 
         bookmarks.forEach(bookmark => {
@@ -10,11 +10,10 @@ $('document').ready(function(){
         }))
       .catch(error => console.log(error));
     if(store.adding) {
-      bookmarkForm.render();
+      form.render();
     }
     bookmarkList.bindBookmarkListEventHandlers();
-    bookmarkForm.bindFormEventListeners();
-    console.log('index.js is loaded');
+    form.bindFormEventListeners();
   });
   
   console.log('store', store.bookmarks);

@@ -12,8 +12,6 @@ body {
 
 
 h1 {
-    /* border: solid 3px #000; */
-
     text-align: center;
     font-size: 48px;
     font-weight:normal;
@@ -34,7 +32,6 @@ nav button {
 
     display: inline-block;
 
-    /* font-family: "Favorit", arial, sans-serif; */
     font-size: 24px;
     font-weight:normal;
 
@@ -43,7 +40,6 @@ nav button {
 
 label {
     height: 75px;
-    /* font-family: "Favorit", arial, sans-serif; */
 }
 
 nav select {
@@ -52,10 +48,8 @@ nav select {
     text-align: center;
     float: right;
 
-    /* display: inline-block; */
-    /* font-family: "Favorit", arial, sans-serif; */
     font-size: 24px;
-    /* border-color: transparent transparent #fff transparent; */
+
     cursor: pointer;
 
     border-radius: 0px;
@@ -82,6 +76,7 @@ li {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+    overflow-wrap: break-word;
 }
 
 li button {
@@ -92,8 +87,8 @@ li button {
 }
 
 li button img {
-    width: 20px;
-    padding-top: 5px;
+    width: 30px;
+    /*padding-top: 5px;*/
 }
 
 li h3 {
@@ -119,11 +114,9 @@ li a:hover {
 
 
   .bookmark-form {
-    margin: 15px; 
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
   }
 
   input {
@@ -134,11 +127,7 @@ li a:hover {
 select {
         height: 75px;
         width: 100%;
-        /* text-align: center; */
-        /* float: right; */
-    
-        /* display: inline-block; */
-        /* font-family: "Favorit", arial, sans-serif; */
+
         font-size: 24px;
         border-color: transparent transparent #fff transparent;
         cursor: pointer;
@@ -151,7 +140,6 @@ select {
         background-color: #fff;
         color: #D3D3D3;
 
-        /* text-align-last:right; */
         padding-left: 5px;
         direction: left;
   }
@@ -159,7 +147,7 @@ select {
   form input {
     color:#000;
     font-size: 24px;
-    width: 100%;
+    /* width: 100%; */
     border: 2px solid #D3D3D3;
     padding: 5px;
     margin-bottom: 5px;
@@ -180,8 +168,6 @@ select {
     justify-self: space-between;
     
     cursor: pointer;
-    /* background-color: #6E49F7;
-    color: #fff; */
 
     background-color: #fff;
     color: #000;
@@ -219,7 +205,7 @@ select {
     }
 
     form input {
-        font-size: 18px;
+        font-size: 12px;
     }
 
     form button {

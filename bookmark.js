@@ -1,6 +1,6 @@
 'use strict';
 
-const bookmarkItem = function(){
+const bookmarkObject = function(){
   
   const createBookmarkHTML = function(obj){
     let stars = '';
@@ -31,7 +31,7 @@ const bookmarkItem = function(){
         <div data-bookmark-id="${obj.id}" class="bookmark-expand">
           <h3>${obj.title}</h3>
           <p class="rating">${stars}</p>
-          <p class="desc" placeholder="No description provided" disabled>${obj.desc = obj.desc ? obj.desc : 'No description provided'}</p>
+          <p class="description" placeholder="No description provided" disabled>${obj.desc = obj.desc ? obj.desc : 'No description provided'}</p>
           <a href="${obj.url}" target="_blank">Visit Site</a>
         </div>
       </li>

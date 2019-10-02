@@ -32,7 +32,7 @@ const updateRatingFilter = function(num = Number) {
     this.filter = num;
 };
 
-const toggleAddBookmarkForm = function() {
+const toggleAddForm = function() {
     this.adding = !this.adding;
 };
 
@@ -44,7 +44,7 @@ return {
     updateBookmark,
     deleteBookmarkByID,
     updateRatingFilter,
-    toggleAddBookmarkForm,
+    toggleAddForm,
     toggleEditBookmark,
     toggleExpandBookmark
 };
