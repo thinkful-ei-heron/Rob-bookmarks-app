@@ -12,11 +12,16 @@ body {
 
 
 h1 {
-    border: solid 3px #000;
+    /* border: solid 3px #000; */
 
     text-align: center;
     font-size: 48px;
     font-weight:normal;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #000;
 }
 
 nav button {
@@ -41,16 +46,16 @@ label {
     /* font-family: "Favorit", arial, sans-serif; */
 }
 
-select {
+nav select {
     height: 75px;
-    width: 49%;
+    width: 50%;
     text-align: center;
     float: right;
 
     /* display: inline-block; */
     /* font-family: "Favorit", arial, sans-serif; */
     font-size: 24px;
-    border-color: transparent transparent #fff transparent;
+    /* border-color: transparent transparent #fff transparent; */
     cursor: pointer;
 
     border-radius: 0px;
@@ -58,36 +63,25 @@ select {
     -webkit-border-radius: 0px;
 
     background-color: #D3D3D3;
+    color: #000;
+
+    text-align-last:center;
+    direction: rtl;
 }
-
-
-.hide-button {
-    opacity: 0;
-}
-
-
 
 ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     list-style-position: initial;
-    /* display: block; */
-    /* margin-left: auto;
-    margin-right: auto; */
     width: 100%;
 
-    /* display: table; */
 }
 
 li {
-    height: 100px;
-    /* width: 100%; */
-    /* border: 3px solid #000; */
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    /* display: table-row; */
 }
 
 li button {
@@ -95,18 +89,144 @@ li button {
     background-color: inherit;
     float: right;
     cursor: pointer;
-
-    padding-top: 30px;
-   /* display: inline-block; */
 }
 
 li button img {
-    width: 15px;
-    
-    /* display: inline-block; */
+    width: 20px;
+    padding-top: 5px;
 }
 
 li h3 {
-    font-weight:normal;
+    font-weight: normal;
     font-size: 24px;
 }
+
+li p {
+    margin-top: 0px;
+    font-size: 18px;   
+}
+
+li a {
+    text-decoration: none;
+    color: #000;
+    line-height: 0px;
+}
+
+li a:hover {
+    border-bottom: solid 1.5px #000;
+    padding-bottom: 0px;
+}
+
+
+  .bookmark-form {
+    margin: 15px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+    color: #000;
+  }
+
+select {
+        height: 75px;
+        width: 100%;
+        /* text-align: center; */
+        /* float: right; */
+    
+        /* display: inline-block; */
+        /* font-family: "Favorit", arial, sans-serif; */
+        font-size: 24px;
+        border-color: transparent transparent #fff transparent;
+        cursor: pointer;
+    
+        border-radius: 0px;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+
+        border: 2px solid #D3D3D3;
+        background-color: #fff;
+        color: #D3D3D3;
+
+        /* text-align-last:right; */
+        padding-left: 5px;
+        direction: left;
+  }
+
+  form input {
+    color:#000;
+    font-size: 24px;
+    width: 100%;
+    border: 2px solid #D3D3D3;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  input::placeholder {
+    color: #D3D3D3;
+  }
+
+ form button {
+    width: 50%;
+    height: 75px;
+    font-size: 24px;
+
+    border: none;
+
+    margin-top: 5px;
+    justify-self: space-between;
+    
+    cursor: pointer;
+    /* background-color: #6E49F7;
+    color: #fff; */
+   }
+
+   form button .submit {
+    background-color: #6E49F7;
+    color: #fff;
+   }
+
+   @media (max-width: 800px) {
+    li {
+        border-bottom: 2px solid #d3d3d3;
+    }
+   }
+
+   @media (max-width: 500px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    nav button {
+        font-size: 18px;
+    }
+
+    nav select {
+        font-size: 18px;
+    }
+
+    li {
+        border-bottom: 2px solid #d3d3d3;
+    }
+
+    li h3 {
+        font-size: 18px;
+    }
+
+    li p, li a {
+        font-size: 12px;
+    }
+
+    form input {
+        font-size: 18px;
+    }
+
+    form button {
+        font-size: 18px;
+        background-color: #fff;
+    }
+
+   }

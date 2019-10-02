@@ -3,24 +3,25 @@
 const bookmarkForm = function(){
   
   const render = function(){
+      // <label for="title">Title</label>
+      // <label for="url">Bookmark URL</label>
+      // <label for="desc">Description</label>
+      // <label for="rating">My Rating</label>
     const form = `
       <form id="bookmark-form" class="bookmark-form">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" placeholder="My Awesome Site" required />
-        <label for="url">Bookmark URL</label>
-        <input type="url" name="url" id="url" placeholder="http://site.com" required />
-        <label for="desc">Description</label>
-        <input type="text" name="desc" id="desc" maxlength="255" placeholder="Enter a summary"/>
-        <label for="rating">My Rating</label>
+        <input type="text" name="title" id="title" placeholder="Site Title" required />
+        <input type="url" name="url" id="url" placeholder="Site URL" required />
+        <input type="text" name="desc" id="desc" maxlength="255" placeholder="Enter a short description of the bookmark"/>
+        
         <select name="rating" id="rating" min="1" max="5">
-          <option value="5">&#x2605&#x2605&#x2605&#x2605&#x2605</option>
-          <option value="4">&#x2605&#x2605&#x2605&#x2605&#9734;</option>
-          <option value="3">&#x2605&#x2605&#x2605&#9734;&#9734;</option>
-          <option value="2">&#x2605&#x2605&#9734;&#9734;&#9734;</option>
-          <option value="1">&#x2605&#9734;&#9734;&#9734;&#9734;</option>
+          <option value="5">⭑⭑⭑⭑⭑</option>
+          <option value="4">⭑⭑⭑⭑⭒</option>
+          <option value="3">⭑⭑⭑⭒⭒</option>
+          <option value="2">⭑⭑⭒⭒⭒</option>
+          <option value="1">⭑⭒⭒⭒⭒</option>
         </select>
-        <button type="submit">Add</button>
-        <button type="reset">Cancel</button>
+        <button type="submit" class="submit" aria-label="Click here to add a new bookmark">Add</button>
+        <button type="reset" class="reset" aria-label="Click here to close the current form">Cancel</button>
       </form>
     `;
     if(store.adding) {

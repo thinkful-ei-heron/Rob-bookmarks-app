@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section>
-    <h1>My Bookmarks</h1>
-    <nav>
-    <button type="submit" id="display-form" class="display-form">New Bookmark</button>
-    <select name="rating-filter" id="rating-filter">
-        <option value selected>Minimum Rating</option>
+    <section aria-live="polite">
+    <h1><a href="index.html">My Bookmarks</a></h1>
+    <nav role="navigation bar">
+    <button type="submit" id="display-form" class="display-form" aria-label="display form">New Bookmark</button>
+    <select name="rating-filter" id="rating-filter" aria-controls="rating-filter">
+        <option value selected>￬ Minimum Rating</option>
         <option value="5">⭑⭑⭑⭑⭑</option>
         <option value="4">⭑⭑⭑⭑⭒</option>
         <option value="3">⭑⭑⭑⭒⭒</option>
@@ -23,7 +23,7 @@
         <option value="1">⭑⭒⭒⭒⭒</option>
     </select>
     </nav>
-    <ul class="js-bookmark-list">
+    <ul class="js-bookmark-list" role="list of bookmarks">
 
     </ul>
     </section>

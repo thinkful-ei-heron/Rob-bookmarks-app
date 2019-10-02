@@ -1,66 +1,77 @@
 'use strict';
 
-const bookmarkList = function() {
+/* global store, bookmarkItem, api */
 
-    const render = function() {
-        let entries = [...store.bookmarks];
-        let listString = '';
+// eslint-disable-next-line 
+const bookmarkList = function(){
+  
+  // generate each bookmark from the api, after the store has been
+  // updated with that data
+  // once store matches api, render store in DOM
 
-        if (store.filter) {
-            entries = entries.filter(entry = entry.rating >= store.filter)
-        }
+  const render = function(){
+    let entries = [...store.bookmarks];
+    let listString = '';
 
-        entries.forEach(bookmark => {
-            listString = listString + bookmarkItem.createBookmarkHTML(bookmark);   
-        });
-        $('.js-bookmark-list').html(listString);
-    };
-
-
-    function getItemIdFromElement(item) {
-        return $(item)
-        .closest('.bookmark-collapse. .bookmark-expand, .bookmark')
-        .data('bookmark-id');
+    if(store.filter) {
+      entries = entries.filter(entry => entry.rating >= store.filter);
     }
 
-    const handleBookmarkClick = function() {
-        $('.js-bookmark-list').on('click', '.bookmark-expand, .bookmark-collapse', e => {
-            let entryID = getItemIdFromElement(e.target);
-            render();
-        });
-    };
+    entries.forEach(bookmark => {
+      listString += bookmarkItem.createBookmarkHTML(bookmark);
+    });
+    $('.js-bookmark-list').html(listString);
+  };
 
-    const handleBookmarkDelete = function() {
-        $('.js-bookmark-list').on('click', '#delete', e => {
-            let entryID = getItemIdFromElement(e.target);
-            api.deleteBookmark(entryID)
-            .then(res => res.json())
-            .then(resJSON => {
-                store.deleteBookmarkByID(entryID);
-                render();
-            })
-            .catch(error => console.log(error));
-        });
-    };
+  // retrieve data item from an element
+  function getItemIdFromElement(item) {
+    return $(item)
+      .closest('.bookmark-collapse, .bookmark-expand, .bookmark')
+      .data('bookmark-id');
+  }
 
-    const handleRatingFilterChange = function() {
-        $('#rating-filter').on('change', e => {
-            let newRating = e.target.value;
-            store.filter = newRating;
-            render();
-        });
-    };
+  // on click, toggle expand/collapse of bookmark item
+  const handleBookmarkClick = function(){
+    $('.js-bookmark-list').on('click', '.bookmark-expand, .bookmark-collapse', e => {
+      let entryID = getItemIdFromElement(e.target);
+      store.toggleExpandBookmark(entryID);
+      render();
+    });
+  };
 
-    const bindBookmarkListEventHandlers = function() {
-        handleBookmarkClick();
-        handleBookmarkDelete();
-        handleRatingFilterChange();
-    };
+  // on click, delete an item
+  const handleBookmarkDelete = function(){
+    $('.js-bookmark-list').on('click', '#delete', e => {
+      let entryID = getItemIdFromElement(e.target);
+      api.deleteBookmark(entryID)
+        .then(res => res.json())
+        .then(resJSON => {
+          store.deleteBookmarkByID(entryID);
+          render();
+        })
+        .catch(error => console.log(error));
+    });
+  };
 
-    return {
-        bindBookmarkListEventHandlers,
-        render
-    };
+  // on update of rating filter, render only bookmarks greater than
+  // or equal to the rating chosen
+  const handleRatingFilterChange = function(){
+    $('#rating-filter').on('change', e => {
+      let newRating = e.target.value;
+      store.filter = newRating;
+      render();
+    });
+  };
 
+  // package all event handlers
+  const bindBookmarkListEventHandlers = function(){
+    handleBookmarkClick();
+    handleBookmarkDelete();
+    handleRatingFilterChange();
+  };
+
+  return {
+    bindBookmarkListEventHandlers,
+    render
+  };
 }();
-
