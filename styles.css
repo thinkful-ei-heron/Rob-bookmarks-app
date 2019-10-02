@@ -183,9 +183,9 @@ select {
     color: #fff; */
    }
 
-   form button .submit {
-    background-color: #6E49F7;
-    color: #fff;
+   form button {
+    background-color: #fff;
+    color: #000;
    }
 
    @media (max-width: 800px) {
